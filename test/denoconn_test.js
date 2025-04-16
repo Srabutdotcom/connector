@@ -1,5 +1,5 @@
 import { deno_connect } from "../src/denoconnector.js";
-import { consolelog } from "../play/console.js";
+import { consolelog } from "./console.js";
 
 const SMTP_SERVER = "smtp-mail.outlook.com"; //"smtp.gmail.com";//"smtp.zoho.com";//"smtp.yandex.com";//"mail.gmx.com";//"localhost";//"testtls.com";//
 const SMTP_PORT = 587; // For TLS
