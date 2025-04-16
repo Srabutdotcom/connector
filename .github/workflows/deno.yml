@@ -42,4 +42,4 @@ jobs:
         run: deno test test/*.js --allow-net
 
       - name: Run Inject Version
-        run: deno run --allow-read --allow-write type/version.js"
+        run: deno run --allow-read --allow-write type/version.js

@@ -7,7 +7,7 @@ for await (const entry of Deno.readDir(dir)) {
   if (entry.isFile && entry.name.endsWith(".d.ts")) {
     const path = `${dir}${entry.name}`;
     const filestr = await Deno.readTextFile(fromFileUrl(path));
-    const updated = filestr.replace(
+    const updated = filestr.replaceAll(
       /(@version\s+)(?:[\d.]+|__VERSION__)/g,
       `$1${version}`,
     );
