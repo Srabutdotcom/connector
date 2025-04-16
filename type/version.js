@@ -1,16 +1,18 @@
+import { fromFileUrl } from "https://deno.land/std/path/mod.ts";
 const { version } = JSON.parse(await Deno.readTextFile("deno.json"));
 
-const files = [
-   "./denoconnector.d.ts",
-   "./nodeconnector.d.ts"
-]
+const dir = new URL("./", import.meta.url);
 
-for (const file of files) {
-   const filePath = new URL(file, import.meta.url)
-   const filestr = await Deno.readTextFile(filePath);
-   const updated = filestr.replace(
+for await (const entry of Deno.readDir(dir)) {
+  if (entry.isFile && entry.name.endsWith(".d.ts")) {
+    const path = `${dir}${entry.name}`;
+    const filestr = await Deno.readTextFile(fromFileUrl(path));
+    const updated = filestr.replace(
       /(@version\s+)(?:[\d.]+|__VERSION__)/g,
-      `$1${version}`);
-   await Deno.writeTextFile(filePath, updated);
+      `$1${version}`,
+    );
+    await Deno.writeTextFile(fromFileUrl(path), updated);
+    console.log(`Updated version in ${path}`);
+  }
 }
 
