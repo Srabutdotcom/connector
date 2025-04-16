@@ -39,7 +39,7 @@ jobs:
         run: deno lint src/ 
 
       - name: Run tests
-        run: deno test test/*.js
+        run: deno test test/*.js --allow-net
 
       - name: Run Inject Version
         run: deno run --allow-read --allow-write type/version.js"
