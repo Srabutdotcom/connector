@@ -7,7 +7,7 @@ import net from "node:net";
  * @param {string} [option.host] - The hostname or IP address of the server. Default is '127.0.0.1'.
  * @param {number} [option.port] - The port number of the server. Default is 587.
  * @returns {Promise<NodeConnect>} A Promise that resolves with a NodeConnect instance upon successful connection.
- * @version 0.0.1
+ * @version 0.0.2
  */
 export function node_connect(option?: { host?: string; port?: number }): Promise<NodeConnect>;
 
