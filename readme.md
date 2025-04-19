@@ -1,5 +1,6 @@
 ```markdown
 # Deno TCP Connect
+@version 0.0.3
 
 A lightweight wrapper around `Deno.connect` to simplify reading and writing to TCP connections, with helper methods to handle strings and streams.
 

@@ -1,23 +1,27 @@
 {
   "name": "@aicone/connector",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "exports": "./src/mod.ts",
   "publish": {
-    "exclude": ["dist/"]
+    "exclude": [
+      "dist/"
+    ]
   },
-  "tasks":{
-    "test": "deno test", 
+  "tasks": {
+    "test": "deno test --allow-net",
     "lint": "deno lint",
     "inject-version": "deno run --allow-read --allow-write type/version.js"
   },
   "lint": {
-    "include": ["src/"],
-    "exclude": ["dist/"],
+    "include": [
+      "src/"
+    ],
+    "exclude": [
+      "dist/"
+    ],
     "rules": {
       "exclude": []
     }
   },
-  "imports": {
-    
-  }
+  "imports": {}
 }
