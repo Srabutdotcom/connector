@@ -31,6 +31,7 @@ class NodeConnect {
       });
    }
    write(data){
+      data = sanitize(data)
       this.#socket.write(data)
    }
    async read_string(){
@@ -50,4 +51,12 @@ class NodeConnect {
    close(){
       return this.#socket.destroy();
    }
+}
+
+function sanitize(data){
+   if(data instanceof Uint8Array){
+      if(Object.getPrototypeOf(data)==Uint8Array.prototype)return data;
+      return Uint8Array.from(data)
+   }
+   return data
 }

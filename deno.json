@@ -1,6 +1,6 @@
 {
   "name": "@aicone/connector",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "exports": "./src/mod.ts",
   "publish": {
     "exclude": [
@@ -23,5 +23,9 @@
       "exclude": []
     }
   },
-  "imports": {}
+  "imports": {
+    "@tls/clienthello": "jsr:@tls/clienthello@^0.0.6",
+    "@tls/handshake": "jsr:@tls/handshake@^0.1.7",
+    "@tls/record": "jsr:@tls/record@^0.2.6"
+  }
 }
