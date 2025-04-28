@@ -60,7 +60,6 @@ class DenoConnect {
 }
 
 function sanitize(byte){
-   if(Object.getPrototypeOf(byte)==Uint8Array.prototype)return byte;
    if(byte instanceof Uint8Array)return Uint8Array.from(byte);
    throw new TypeError(`Expected Uint8Array`)
 }

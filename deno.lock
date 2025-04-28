@@ -1,24 +1,28 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@aicone/byte@~0.8.4": "0.8.6",
-    "jsr:@aicone/byte@~0.8.6": "0.8.6",
-    "jsr:@noble/hashes@^1.7.2": "1.7.2",
-    "jsr:@std/assert@^1.0.12": "1.0.12",
+    "jsr:@aicone/byte@~0.8.6": "0.8.8",
+    "jsr:@aicone/byte@~0.8.7": "0.8.8",
+    "jsr:@aicone/byte@~0.8.8": "0.8.8",
+    "jsr:@noble/hashes@^1.8.0": "1.8.0",
+    "jsr:@std/assert@^1.0.12": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.6",
     "jsr:@tls/auth@~0.2.6": "0.2.6",
-    "jsr:@tls/clienthello@^0.0.5": "0.0.5",
-    "jsr:@tls/clienthello@^0.0.6": "0.0.6",
-    "jsr:@tls/enum@~0.9.7": "0.9.7",
-    "jsr:@tls/extension@0.6": "0.6.0",
-    "jsr:@tls/handshake@~0.1.7": "0.1.7",
+    "jsr:@tls/clienthello@^1.1.1": "1.1.3",
+    "jsr:@tls/clienthello@^1.1.3": "1.1.3",
+    "jsr:@tls/enum@0.10": "0.10.0",
+    "jsr:@tls/enum@~0.9.7": "0.9.8",
+    "jsr:@tls/extension@0.6": "0.6.4",
+    "jsr:@tls/extension@~0.6.4": "0.6.4",
+    "jsr:@tls/handshake@~0.1.7": "0.1.9",
+    "jsr:@tls/handshake@~0.2.1": "0.2.1",
     "jsr:@tls/param@~0.2.8": "0.2.8",
     "jsr:@tls/parser@^0.0.3": "0.0.3",
-    "jsr:@tls/record@~0.2.6": "0.2.6",
-    "jsr:@tls/serverhello@^0.0.4": "0.0.4",
+    "jsr:@tls/record@~0.2.7": "0.2.7",
+    "jsr:@tls/serverhello@^0.0.5": "0.0.5",
     "jsr:@tls/ticket@^0.0.9": "0.0.9",
-    "npm:@noble/curves@^1.8.2": "1.8.2",
-    "npm:@noble/hashes@^1.7.2": "1.7.2",
+    "npm:@noble/curves@^1.9.0": "1.9.0",
+    "npm:@noble/hashes@^1.7.2": "1.8.0",
     "npm:@peculiar/x509@^1.12.3": "1.12.3",
     "npm:@stablelib/hmac@^2.0.1": "2.0.1",
     "npm:@stablelib/sha256@^2.0.1": "2.0.1",
@@ -27,17 +31,17 @@
     "npm:pvtsutils@^1.3.6": "1.3.6"
   },
   "jsr": {
-    "@aicone/byte@0.8.6": {
-      "integrity": "3fa9023527fa7c9590a073bf7fe966c6bf77f9424c3ac40d2ee03f58ff81bad8",
+    "@aicone/byte@0.8.8": {
+      "integrity": "b4e9891dae9b821cdf364a1615d40593bde1eac261afa3caaf6d2eae73601777",
       "dependencies": [
         "npm:pvtsutils"
       ]
     },
-    "@noble/hashes@1.7.2": {
-      "integrity": "537468975e88e1ab3f5a772657b7143bd37d754ee0f0306188c9da11e2f404df"
+    "@noble/hashes@1.8.0": {
+      "integrity": "b52a2fcb4d02f8d8137871564a31f1ee9e2b0d15eedabbf32d2f7333f0abc939"
     },
-    "@std/assert@1.0.12": {
-      "integrity": "08009f0926dda9cbd8bef3a35d3b6a4b964b0ab5c3e140a4e0351fbf34af5b9a",
+    "@std/assert@1.0.13": {
+      "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
       "dependencies": [
         "jsr:@std/internal"
       ]
@@ -50,8 +54,8 @@
       "dependencies": [
         "jsr:@aicone/byte@~0.8.6",
         "jsr:@std/assert",
-        "jsr:@tls/enum",
-        "jsr:@tls/extension",
+        "jsr:@tls/enum@~0.9.7",
+        "jsr:@tls/extension@0.6",
         "jsr:@tls/parser",
         "npm:@noble/hashes@^1.7.2",
         "npm:@peculiar/x509",
@@ -60,49 +64,63 @@
         "npm:@stablelib/sha384"
       ]
     },
-    "@tls/clienthello@0.0.5": {
-      "integrity": "2cc9f01ddbc9ddd777bafce203fc8120bfb5bc38bcbf7fc8342f95170668427a",
+    "@tls/clienthello@1.1.3": {
+      "integrity": "1ff3df1f29b555f3393c1f8ba03cc72b9bf7fb3c063bdef0b1e3c08cbb7adb14",
       "dependencies": [
-        "jsr:@aicone/byte@~0.8.6",
-        "jsr:@tls/enum",
-        "jsr:@tls/extension",
+        "jsr:@aicone/byte@~0.8.8",
+        "jsr:@tls/enum@0.10",
+        "jsr:@tls/extension@~0.6.4",
         "jsr:@tls/parser"
       ]
     },
-    "@tls/clienthello@0.0.6": {
-      "integrity": "b02bdf24a19b50549d4bbc8583b3364b8c30ebe68bbe02a5a3bda9d353b65b47",
+    "@tls/enum@0.9.8": {
+      "integrity": "866aaea465d9abce4799282111d1260a6416cd32723d7d6bffd02448193ccb11",
       "dependencies": [
-        "jsr:@aicone/byte@~0.8.6",
-        "jsr:@tls/enum",
-        "jsr:@tls/extension",
-        "jsr:@tls/parser"
-      ]
-    },
-    "@tls/enum@0.9.7": {
-      "integrity": "01eacc59fca70a9e9014b781097a60d463bbe100710f612fe2ceef7225524234",
-      "dependencies": [
-        "jsr:@aicone/byte@~0.8.6",
-        "jsr:@noble/hashes@^1.7.2",
+        "jsr:@aicone/byte@~0.8.7",
+        "jsr:@noble/hashes@^1.8.0",
         "npm:@noble/curves",
         "npm:@peculiar/x509"
       ]
     },
-    "@tls/extension@0.6.0": {
-      "integrity": "671c3008cb4b5084c536d943080f6d92817f821849dbfa9d0ff5e6ca98c5d188",
+    "@tls/enum@0.10.0": {
+      "integrity": "cdb5c9a4ef9d120fc1b9d6013491b1caf992b45cb7b6970f2d669554956c7e4b",
       "dependencies": [
-        "jsr:@aicone/byte@~0.8.6",
-        "jsr:@tls/enum",
+        "jsr:@aicone/byte@~0.8.8",
+        "jsr:@noble/hashes@^1.8.0",
+        "npm:@noble/curves",
+        "npm:@peculiar/x509"
+      ]
+    },
+    "@tls/extension@0.6.4": {
+      "integrity": "278ab63e5643eebe3d317cbc3bfb7b2e8795a2b9905e9dd572aac6666695efb3",
+      "dependencies": [
+        "jsr:@aicone/byte@~0.8.8",
+        "jsr:@tls/enum@0.10",
         "jsr:@tls/parser"
       ]
     },
-    "@tls/handshake@0.1.7": {
-      "integrity": "ea6c872782fa3d8b8d069671dc168e35dd33985dff9ff09ab37549965d9aabde",
+    "@tls/handshake@0.1.9": {
+      "integrity": "b5b0fc2677b1fa7c31bdf3697f0190965f8c464b4f01600de21f58bdb802adc0",
       "dependencies": [
-        "jsr:@aicone/byte@~0.8.6",
+        "jsr:@aicone/byte@~0.8.8",
         "jsr:@tls/auth",
-        "jsr:@tls/clienthello@^0.0.5",
-        "jsr:@tls/enum",
-        "jsr:@tls/extension",
+        "jsr:@tls/clienthello@^1.1.1",
+        "jsr:@tls/enum@0.10",
+        "jsr:@tls/extension@~0.6.4",
+        "jsr:@tls/param",
+        "jsr:@tls/parser",
+        "jsr:@tls/serverhello",
+        "jsr:@tls/ticket"
+      ]
+    },
+    "@tls/handshake@0.2.1": {
+      "integrity": "3de93e171ae84fa36fb04d3761eab6b8c14c61767f033b016872ad5ddf2a6b84",
+      "dependencies": [
+        "jsr:@aicone/byte@~0.8.8",
+        "jsr:@tls/auth",
+        "jsr:@tls/clienthello@^1.1.3",
+        "jsr:@tls/enum@0.10",
+        "jsr:@tls/extension@~0.6.4",
         "jsr:@tls/param",
         "jsr:@tls/parser",
         "jsr:@tls/serverhello",
@@ -113,28 +131,28 @@
       "integrity": "668f24333b68102a408ac68754e1b9ee616452c90d9de8a630a7ff39f763ed29",
       "dependencies": [
         "jsr:@aicone/byte@~0.8.6",
-        "jsr:@tls/enum",
-        "jsr:@tls/extension",
+        "jsr:@tls/enum@~0.9.7",
+        "jsr:@tls/extension@0.6",
         "jsr:@tls/parser"
       ]
     },
     "@tls/parser@0.0.3": {
       "integrity": "3062ce071f9ab55af728901c646598ec761c2bfa80abb0a828dfeca53887699b"
     },
-    "@tls/record@0.2.6": {
-      "integrity": "b1124b260596b15d51f5460ed59775c050155afa03ccf67c2de862cd3da3b7ae",
+    "@tls/record@0.2.7": {
+      "integrity": "124de04d4711f882df1d54af1f3a4bf49d268279f1f5505ff0047893233a5e8c",
       "dependencies": [
-        "jsr:@aicone/byte@~0.8.6",
-        "jsr:@tls/enum",
-        "jsr:@tls/handshake"
+        "jsr:@aicone/byte@~0.8.8",
+        "jsr:@tls/enum@0.10",
+        "jsr:@tls/handshake@~0.1.7"
       ]
     },
-    "@tls/serverhello@0.0.4": {
-      "integrity": "928412fc57f9f03e30cf62cafbe92581f5e7cf957e436699b4279f3e29e76af6",
+    "@tls/serverhello@0.0.5": {
+      "integrity": "a344a309f66ade7bf701d4cd3143a65554a9f5a5a8f79a0f86f90a9f01ad1b9f",
       "dependencies": [
-        "jsr:@aicone/byte@~0.8.4",
-        "jsr:@tls/enum",
-        "jsr:@tls/extension",
+        "jsr:@aicone/byte@~0.8.8",
+        "jsr:@tls/enum@0.10",
+        "jsr:@tls/extension@~0.6.4",
         "jsr:@tls/parser"
       ]
     },
@@ -142,20 +160,20 @@
       "integrity": "e5a8381f2351ea264ec857d77712a5f58f89c08edf2f72fd7df07c1c9a8ee86f",
       "dependencies": [
         "jsr:@aicone/byte@~0.8.6",
-        "jsr:@tls/enum",
-        "jsr:@tls/extension"
+        "jsr:@tls/enum@~0.9.7",
+        "jsr:@tls/extension@0.6"
       ]
     }
   },
   "npm": {
-    "@noble/curves@1.8.2": {
-      "integrity": "sha512-vnI7V6lFNe0tLAuJMu+2sX+FcL14TaCWy1qiczg1VwRmPrpQCdq5ESXQMqUc2tluRNf6irBXrWbl1mGN8uaU/g==",
+    "@noble/curves@1.9.0": {
+      "integrity": "sha512-7YDlXiNMdO1YZeH6t/kvopHHbIZzlxrCV9WLqCY6QhcXOoXiNCMDqJIglZ9Yjx5+w7Dz30TITFrlTjnRg7sKEg==",
       "dependencies": [
         "@noble/hashes"
       ]
     },
-    "@noble/hashes@1.7.2": {
-      "integrity": "sha512-biZ0NUSxyjLLqo6KxEJ1b+C2NAx0wtDoFvCaXHGgUkeHzf3Xc1xKumFKREuT7f7DARNZ/slvYUwFG6B0f2b6hQ=="
+    "@noble/hashes@1.8.0": {
+      "integrity": "sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A=="
     },
     "@peculiar/asn1-cms@2.3.15": {
       "integrity": "sha512-B+DoudF+TCrxoJSTjjcY8Mmu+lbv8e7pXGWrhNp2/EGJp9EEcpzjBCar7puU57sGifyzaRVM03oD5L7t7PghQg==",
@@ -478,9 +496,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@tls/clienthello@^0.0.6",
-      "jsr:@tls/handshake@~0.1.7",
-      "jsr:@tls/record@~0.2.6"
+      "jsr:@tls/clienthello@^1.1.3",
+      "jsr:@tls/handshake@~0.2.1",
+      "jsr:@tls/record@~0.2.7"
     ]
   }
 }

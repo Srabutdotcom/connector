@@ -7,7 +7,7 @@
  * @param {"tcp"} [option.transport="tcp"] - Transport type, must be "tcp".
  * @returns {Promise<DenoConnect>} A promise that resolves to a DenoConnect instance.
  * @throws {Error} Throws if connection fails.
- * @version 0.0.4
+ * @version 0.0.5
  */
 export declare function deno_connect(option?: {
   port?: number;
