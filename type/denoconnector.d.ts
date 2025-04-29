@@ -7,7 +7,7 @@
  * @param {"tcp"} [option.transport="tcp"] - Transport type, must be "tcp".
  * @returns {Promise<DenoConnect>} A promise that resolves to a DenoConnect instance.
  * @throws {Error} Throws if connection fails.
- * @version 0.0.5
+ * @version 0.0.6
  */
 export declare function deno_connect(option?: {
   port?: number;
@@ -16,62 +16,87 @@ export declare function deno_connect(option?: {
 }): Promise<DenoConnect>;
 
 /**
- * Wrapper around Deno.Conn that provides convenient read/write utilities.
+ * A class for interacting with a Deno connection.
  */
-export declare class DenoConnect {
-  readonly #conn: Deno.Conn;
+declare class DenoConnect {
+  #conn: any; //  Ideally, this should be a more specific type (e.g., Deno.Conn)
 
   /**
-   * Creates a new DenoConnect instance.
-   * @param {Deno.Conn} conn - The underlying Deno TCP connection.
+   * Constructs a DenoConnect instance.
+   * @param conn The Deno connection object.
    */
-  constructor(conn: Deno.Conn);
+  constructor(conn: any); //  Ideally, this should be a more specific type
 
   /**
-   * Reads the next chunk from the connection stream (one-time read).
-   * @returns {Promise<Uint8Array>} The received bytes.
+   * Reads a chunk of data from the connection's readable stream.
+   * @returns A Promise that resolves with the read Uint8Array, or undefined if the stream ends.
    */
-  read_stream(): Promise<Uint8Array>;
+  read_stream(): Promise<Uint8Array | undefined>;
 
   /**
-   * Reads data from the connection using a fixed-size buffer.
-   * @returns {Promise<Uint8Array>} The read data.
-   * @throws {Error} Throws if the connection is closed.
+   * Reads all records from the connection's readable stream.
+   * @returns A Promise that resolves to an array of Uint8Array, where each Uint8Array is a record.
+   */
+  read_record(): Promise<Uint8Array[]>;
+
+  /**
+   * Reads lines from the connection's readable stream.
+   * @returns A Promise that resolves to an array of strings, where each string is a line.
+   */
+  read_lines(): Promise<string[]>;
+
+  /**
+   * Reads data from the connection into a buffer.
+   * @returns A Promise that resolves to a Uint8Array containing the read data.
    */
   read(): Promise<Uint8Array>;
 
   /**
-   * Reads a UTF-8 decoded string from the stream.
-   * @returns {Promise<string>} The decoded string.
+   * Reads data from the connection and decodes it as a string.
+   * @returns A Promise that resolves to the decoded string.
    */
   read_decode(): Promise<string>;
 
   /**
-   * Writes raw bytes to the connection.
-   * @param {Uint8Array} data - The bytes to send.
-   * @returns {Promise<number>} The number of bytes written.
+   * Writes data to the connection.
+   * @param byte The data to write (Uint8Array or string).
+   * @returns A Promise that resolves when the data is written.
    */
-  write(data: Uint8Array): Promise<number>;
+  write(byte: Uint8Array | string): Promise<number | void>;
 
   /**
-   * Writes bytes to the connection, then waits and reads a response.
-   * @param {Uint8Array} byte - The bytes to write.
-   * @returns {Promise<Uint8Array>} The response data.
+   * Writes data to the connection and then reads a chunk of data.
+   * @param byte The data to write (Uint8Array or string).
+   * @returns A Promise that resolves with the read Uint8Array, or undefined if the stream ends.
    */
-  write_read(byte: Uint8Array): Promise<Uint8Array>;
+  write_read(byte: Uint8Array | string): Promise<Uint8Array | undefined>;
 
   /**
-   * Writes a string to the connection and reads back the decoded response.
-   * @param {string} string - The string to send.
-   * @returns {Promise<string>} The decoded response string.
+   * Writes data as a record to the connection and then reads the response records.
+   * @param byte The data to write (Uint8Array or string).
+   * @returns A Promise that resolves to an array of Uint8Array records.
+   */
+  write_record(byte: Uint8Array | string): Promise<Uint8Array[]>;
+
+  /**
+   * Writes a string to the connection and then reads and decodes the response.
+   * @param string The string to write.
+   * @returns A Promise that resolves to the string response.
    */
   write_string(string: string): Promise<string>;
 
   /**
-   * Returns the underlying Deno TCP connection.
-   * @returns {Deno.Conn} The connection object.
+   * Writes a string to the connection and then reads the lines of the response.
+   * @param string The string to write.
+   * @returns A Promise that resolves to an array of strings.
    */
-  get conn(): Deno.Conn;
+  write_lines(string: string): Promise<string[]>;
+
+  /**
+   * Gets the underlying connection object.
+   * @returns The connection object.
+   */
+  get conn(): any; //  Ideally, this should be a more specific type
 
   /**
    * Closes the connection.
